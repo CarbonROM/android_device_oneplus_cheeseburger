@@ -64,6 +64,10 @@ on init
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
+    # Fingerprint
+    chmod 0660 /sys/devices/soc/soc:fpc_fpc1020/proximity_state
+    chown system system /sys/devices/soc/soc:fpc_fpc1020/proximity_state
+
 on late-fs
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
