@@ -330,8 +330,7 @@ PRODUCT_PACKAGES += \
     power.msm8998
 
 # Powerhint configuration file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/powerhint.xml:system/etc/powerhint.xml
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # QMI
 PRODUCT_PACKAGES += \
