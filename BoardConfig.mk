@@ -137,8 +137,9 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_USES_QCNE := true
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
+TARGET_HW_DISK_ENCRYPTION := false
+TARGET_CRYPTFS_HW_PATH := device/oneplus/cheeseburger/cryptfs_hw
+TARGET_PROVIDES_KEYMASTER := true
 
 # Display
 BOARD_USES_ADRENO := true
