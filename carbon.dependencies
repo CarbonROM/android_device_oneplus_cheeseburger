@@ -5,5 +5,11 @@
    "repository" : "CarbonROM/android_device_qcom_common",
    "target_path": "device/qcom/common",
    "revision"   : "cr-5.1"
+  },
+  {
+   "remote"     : "carbon",
+   "repository" : "CarbonROM/android_kernel_oneplus_msm8998",
+   "target_path": "kernel/oneplus/msm8998",
+   "revision"   : "cr-5.1"
   }
 ]
