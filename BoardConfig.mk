@@ -180,6 +180,9 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 0
 # Dexpreopt
 WITH_DEXPREOPT := false
 
+# Gestures
+TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
