@@ -1,0 +1,26 @@
+# Thanks Joe Maples <joe@frap129.org>
+# Thanks Sultanxda <sultanxda@gmail.com>
+
+on property:sys.boot_completed=1
+    # Set I/O Scheduler tweaks
+    write /sys/block/sda/queue/scheduler maple
+    write /sys/block/sda/queue/read_ahead_kb 512
+    write /sys/block/sda/queue/iosched/writes_starved 4
+    write /sys/block/sda/queue/iosched/fifo_batch 16
+    write /sys/block/sda/queue/iosched/sync_read_expire 350
+    write /sys/block/sda/queue/iosched/sync_write_expire 550
+    write /sys/block/sda/queue/iosched/async_read_expire 250
+    write /sys/block/sda/queue/iosched/async_write_expire 450
+    write /sys/block/sda/queue/iosched/sleep_latency_multiple 10
+
+    # Set normal thermal restrictions
+
+    # Disable some wakelocks
+    write /sys/module/wakeup/parameters/enable_qcom_rx_wakelock_ws 0
+    write /sys/module/wakeup/parameters/enable_wlan_extscan_wl_ws 0
+    write /sys/module/wakeup/parameters/enable_ipa_ws 0
+    write /sys/module/wakeup/parameters/enable_wlan_wow_wl_ws 0
+    write /sys/module/wakeup/parameters/enable_wlan_ws 0
+    write /sys/module/wakeup/parameters/enable_timerfd_ws 0
+    write /sys/module/wakeup/parameters/enable_netlink_ws 0
+    write /sys/module/wakeup/parameters/enable_netmgr_wl_ws 0
