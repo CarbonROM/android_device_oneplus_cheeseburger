@@ -28,6 +28,7 @@
 #
 
 import init.qcom.power.rc
+import init.adin.rc
 
 on early-init
     mkdir /firmware 0771 system system
