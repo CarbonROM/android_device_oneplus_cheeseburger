@@ -221,6 +221,9 @@ WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# D2TW
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
+
 # inherit from the proprietary version
 -include vendor/oneplus/cheeseburger/BoardConfigVendor.mk
 
