@@ -1,3 +1,4 @@
 allow vold proc_touchpanel:dir r_dir_perms;
 allow vold system_block_device:blk_file r_file_perms;
 allow vold block_device:blk_file { getattr ioctl };
+allow vold system_data_file:file open;
