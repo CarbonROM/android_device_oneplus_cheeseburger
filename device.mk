@@ -114,8 +114,8 @@ PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Camera
-PRODUCT_PACKAGES += \
-    Snap
+#PRODUCT_PACKAGES += \
+#    Snap
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
