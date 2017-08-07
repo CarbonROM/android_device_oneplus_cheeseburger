@@ -91,27 +91,18 @@ PRODUCT_COPY_FILES += \
     device/oneplus/cheeseburger/audio/configs/msm8998/sound_trigger_mixer_paths_wcd9340.xml:system/etc/sound_trigger_mixer_paths_wcd9340.xml \
     device/oneplus/cheeseburger/audio/configs/msm8998/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
     device/oneplus/cheeseburger/audio/configs/msm8998/graphite_ipc_platform_info.xml:system/etc/graphite_ipc_platform_info.xml \
-    device/oneplus/cheeseburger/audio/configs/msm8998/audio_platform_info.xml:system/etc/audio_platform_info.xml
+    device/oneplus/cheeseburger/audio/configs/msm8998/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    device/oneplus/cheeseburger/audio/configs/msm8998/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
 # wangdongdong@MultiMediaService,2016/09/30,add smartpa firmware
 PRODUCT_COPY_FILES += \
     device/oneplus/cheeseburger/audio/configs/msm8998/tfa98xx.cnt:system/etc/firmware/tfa98xx.cnt
 
-#XML Audio configuration files
-ifeq ($(USE_XML_AUDIO_POLICY_CONF), 1)
-ifeq ($(TARGET_USES_AOSP), true)
-PRODUCT_COPY_FILES += \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_configuration.xml:/system/etc/audio_policy_configuration.xml
-else
-PRODUCT_COPY_FILES += \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
-endif
 PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/system/etc/a2dp_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/system/etc/audio_policy_volumes.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/system/etc/default_volume_tables.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
-endif
 
 # Listen configuration file
 PRODUCT_COPY_FILES += \
