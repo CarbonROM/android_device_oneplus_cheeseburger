@@ -211,8 +211,20 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
-# Filesystem
-TARGET_FS_CONFIG_GEN += $(PLATFORM_PATH)/config.fs
+
+# Temporary handling
+#
+# Include config.fs get only if legacy device/qcom/<target>/android_filesystem_config.h
+# does not exist as they are mutually exclusive.  Once all target's android_filesystem_config.h
+# have been removed, TARGET_FS_CONFIG_GEN should be made unconditional.
+DEVICE_CONFIG_DIR := $(dir $(firstword $(subst ]],, $(word 2, $(subst [[, ,$(_node_import_context))))))
+ifeq ($(wildcard $(DEVICE_CONFIG_DIR)/android_filesystem_config.h),)
+  TARGET_FS_CONFIG_GEN := device/oneplus/cheeseburger/config.fs
+else
+  $(warning **********)
+  $(warning TODO: Need to replace legacy $(DEVICE_CONFIG_DIR)android_filesystem_config.h with config.fs)
+  $(warning **********)
+endif
 
 # GPS
 TARGET_NO_RPC := true
