@@ -117,6 +117,13 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += \
 #    Snap
 
+# Camera configuration file. Shared by passthrough/binderized camera HAL
+PRODUCT_PACKAGES += camera.device@3.2-impl
+PRODUCT_PACKAGES += camera.device@1.0-impl
+PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
+# Enable binderized camera HAL
+PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
+
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     cneapiclient \
@@ -127,10 +134,28 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     copybit.msm8998 \
     gralloc.msm8998 \
-    hwcomposer.msm8998 \
+#    hwcomposer.msm8998 \
     memtrack.msm8998 \
     liboverlay \
     libtinyxml
+
+# Display/Graphics
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
+    android.hardware.configstore@1.0-service \
+    android.hardware.broadcastradio@1.0-impl
+
+#PRODUCT_PACKAGES += \
+#    vendor.display.color@1.0-service \
+#    vendor.display.color@1.0-impl
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -164,6 +189,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/sap.conf:system/vendor/etc/sap.conf \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/vendor/etc/xtwifi.conf
 
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-service-qti
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
@@ -181,6 +210,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
+
+# Keymaster
+PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0-impl \
+                    android.hardware.gatekeeper@1.0-service \
+                    android.hardware.keymaster@3.0-impl \
+                    android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -210,6 +245,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
+PRODUCT_PACKAGES += \
+#    vendor.nxp.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.0-impl \
+#    vendor.nxp.hardware.nfc@1.0-service
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -223,13 +263,23 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
+
 # Power
 PRODUCT_PACKAGES += \
     power.msm8998 \
-    powerhint.qti
+    powerhint.qti \
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl
+
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint_soc_id_292.xml:system/etc/powerhint.xml
+
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+DEVICE_MATRIX_FILE   := $(LOCAL_PATH)/compatibility_matrix.xml
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -276,6 +326,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvehiclenetwork-native
 
+#Thermal
+PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
+                    android.hardware.thermal@1.0-service
+
 # TWRP
 ifeq ($(RECOVERY_VARIANT),twrp)
 PRODUCT_COPY_FILES += \
@@ -283,6 +337,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc \
     $(LOCAL_PATH)/recovery/root/twrp.fstab:recovery/root/etc/twrp.fstab
 endif
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service \
+
+#for wlan
+PRODUCT_PACKAGES += \
+	wificond \
+	wifilogd
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -307,3 +371,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
 
+PRODUCT_PACKAGES += android.hidl.manager@1.0-java
+
+PRODUCT_PACKAGES += android.hardware.drm@1.0-impl
+PRODUCT_PACKAGES += android.hardware.drm@1.0-service
