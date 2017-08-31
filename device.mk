@@ -92,7 +92,7 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
-    audio.primary.msm8998 \
+#    audio.primary.msm8998 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
