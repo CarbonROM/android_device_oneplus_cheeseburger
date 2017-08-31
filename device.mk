@@ -23,7 +23,7 @@
 #
 
 $(call inherit-product, vendor/oneplus/cheeseburger/cheeseburger-vendor.mk)
-$(call inherit-product, device/oppo/common/common.mk)
+#$(call inherit-product, device/oppo/common/common.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -183,13 +183,13 @@ PRODUCT_PACKAGES += \
 #    vendor.display.color@1.0-impl
 
 # Doze
-PRODUCT_PACKAGES += \
-    OneplusDoze
+#PRODUCT_PACKAGES += \
+#    OneplusDoze
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd \
-    OneplusPocketMode
+#    OneplusPocketMode
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
