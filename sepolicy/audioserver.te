@@ -1,3 +1,0 @@
-set_prop(audioserver, diag_prop);
-# V4A and more
-allow audioserver self:process execmem;
