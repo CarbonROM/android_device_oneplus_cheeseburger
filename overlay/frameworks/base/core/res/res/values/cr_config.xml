@@ -70,7 +70,6 @@
     <bool name="config_enableKeyHandler">true</bool>
 
     <!-- Keycodes of gestures. If the gesture is not supported set it to 0. -->
-    <integer name="config_doubleTapKeyCode">59</integer>
     <integer name="config_drawVKeyCode">62</integer>
     <integer name="config_drawInverseVKeyCode">65</integer>
     <integer name="config_drawOKeyCode">60</integer>
@@ -94,7 +93,6 @@
             6 - Previous music
             7 - Open camera
             8 - Open dialer -->
-    <integer name="config_doubleTapDefault">1</integer>
     <integer name="config_drawVDefault">2</integer>
     <integer name="config_drawInverseVDefault">3</integer>
     <integer name="config_drawODefault">7</integer>

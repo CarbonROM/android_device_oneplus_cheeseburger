@@ -140,6 +140,8 @@ BOARD_HAVE_QCOM_FM := true
 
 # Gestures
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
+
 
 # GPS
 TARGET_NO_RPC := true
