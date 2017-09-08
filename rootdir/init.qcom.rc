@@ -45,6 +45,10 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    # Touchscreen
+    chown root system /proc/touchpanel/double_tap_enable
+    chmod 0660 /proc/touchpanel/double_tap_enable
+
     # Buttons
     chown root system /proc/s1302/key_rep
     chmod 0660 /proc/s1302/key_rep
