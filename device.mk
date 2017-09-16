@@ -163,8 +163,8 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 # Camera
-PRODUCT_PACKAGES += \
-    Snap
+# PRODUCT_PACKAGES += \
+    # Snap
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
