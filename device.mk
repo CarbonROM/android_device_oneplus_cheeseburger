@@ -162,9 +162,19 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     libbt-vendor
 
+# Camera configuration file. Shared by passthrough/binderized camera HAL
+PRODUCT_PACKAGES += camera.device@3.2-impl
+#PRODUCT_PACKAGES += camera.device@1.0-impl
+PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
+# Enable binderized camera HAL
+#PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
+
 # Camera
-# PRODUCT_PACKAGES += \
-    # Snap
+PRODUCT_PACKAGES += \
+    libcamera_shim \
+    libcamera_shim_display \
+    libcamera_shim_buffer \
+    libcamera_shim_native
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
