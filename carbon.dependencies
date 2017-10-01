@@ -1,0 +1,20 @@
+[
+  {
+   "remote"     : "carbon",
+   "repository" : "CarbonROM/android_device_qcom_common",
+   "target_path": "device/qcom/common",
+   "revision"   : "cr-6.0"
+  },
+  {
+   "remote"     : "carbon",
+   "repository" : "CarbonROM/android_kernel_oneplus_msm8998",
+   "target_path": "kernel/oneplus/msm8998",
+   "revision"   : "cr-6.0"
+  },
+  {
+   "remote"     : "lineage",
+   "repository" : "LineageOS/android_external_json-c",
+   "target_path": "external/json-c",
+   "revision"   : "lineage-15.0"
+  }
+]
