@@ -16,3 +16,4 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/carbon_cheeseburger.mk
+    $(LOCAL_DIR)/AndroidBoard.mk
