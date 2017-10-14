@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#! /system/vendor/bin/sh
 # Copyright (c) 2012, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -61,13 +61,13 @@ if [ -f /system/etc/init.qcom.mdm_links.sh ]; then
 fi
 
 # Run wifi script
-if [ -f /system/etc/init.qcom.wifi.sh ]; then
-  /system/bin/sh /system/etc/init.qcom.wifi.sh "$target" "$serial"
+if [ -f /system/vendor/bin/init.qcom.wifi.sh ]; then
+  /system/vendor/bin/init.qcom.wifi.sh "$target" "$serial"
 fi
 
 # Run the sensor script
-if [ -f /system/etc/init.qcom.sensor.sh ]; then
-  /system/bin/sh /system/etc/init.qcom.sensor.sh
+if [ -f /system/vendor/bin/init.qcom.sensor.sh ]; then
+  /system/vendor/bin/init.qcom.sensor.sh
 fi
 
 touch /system/etc/boot_fixup

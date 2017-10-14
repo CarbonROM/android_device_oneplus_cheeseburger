@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#! /system/vendor/bin/sh
 # Copyright (c) 2009-2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -109,7 +109,7 @@ start_vm_bms()
 
 start_msm_irqbalance_8939()
 {
-  if [ -f /system/bin/msm_irqbalance ]; then
+  if [ -f /system/vendor/bin/msm_irqbalance ]; then
     case "$platformid" in
         "239" | "293" | "294" | "295" | "304" | "313")
       start msm_irqbalance;;
@@ -119,7 +119,7 @@ start_msm_irqbalance_8939()
 
 start_msm_irqbalance()
 {
-  if [ -f /system/bin/msm_irqbalance ]; then
+  if [ -f /system/vendor/bin/msm_irqbalance ]; then
     start msm_irqbalance
   fi
 }
