@@ -13,6 +13,6 @@
     "remote"    : "github",
     "repository": "LineageOS/android_external_json-c",
     "target_path":"external/json-c",
-    "revision"  : "lineage-15.0"
+    "branch"  : "lineage-15.0"
    }
 ]
