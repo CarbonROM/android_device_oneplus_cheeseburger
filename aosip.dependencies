@@ -14,5 +14,10 @@
     "repository": "LineageOS/android_external_json-c",
     "target_path":"external/json-c",
     "branch"  : "lineage-15.0"
+   },
+   {
+    "remote"    : "aosip",
+    "repository": "device_qcom_common",
+    "target_path":"device/qcom/common"
    }
 ]
