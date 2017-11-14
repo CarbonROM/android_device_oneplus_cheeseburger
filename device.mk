@@ -197,10 +197,6 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
-# Doze mode
-#PRODUCT_PACKAGES += \
-#    OneplusDoze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
