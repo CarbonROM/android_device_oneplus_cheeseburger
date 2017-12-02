@@ -61,7 +61,7 @@ on fs
     mount ext4 /dev/block/bootdevice/by-name/dsp /dsp ro nosuid nodev barrier=1
 
 on init
-    export LD_SHIM_LIBS "/system/lib/hw/camera.msm8998.so|libcamera_shim.so:/system/vendor/lib64/libril-qc-qmi-1.so|libshims_system_properties.so:/system/vendor/lib/libfusionLibrary.so|libcamera_shim.so:/system/vendor/lib/libmmcamera_ppeiscore.so|libcamera_shim.so:/system/vendor/lib/libcamera_bokeh_wrapper.so|libcamera_shim.so"
+    export LD_SHIM_LIBS "/system/vendor/lib/hw/camera.msm8998.so|libcamera_shim.so:/system/vendor/lib64/libril-qc-qmi-1.so|libshims_system_properties.so:/system/vendor/lib/libfusionLibrary.so|libcamera_shim.so:/system/vendor/lib/libmmcamera_ppeiscore.so|libcamera_shim.so:/system/vendor/lib/libcamera_bokeh_wrapper.so|libcamera_shim.so"
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
@@ -281,7 +281,7 @@ service fingerprintd /system/bin/fingerprintd
     user system
     group system
 
-service qvop-daemon /system/bin/qvop-daemon
+service qvop-daemon /system/vendor/bin/qvop-daemon
     class late_start
     user system
     group system drmrpc
@@ -293,12 +293,12 @@ service qvrd /system/vendor/bin/qvrservice
     socket qvrservice stream 0666 system system
 
 #Start up peripheral manager
-service per_mgr /system/bin/pm-service
+service per_mgr /system/vendor/bin/pm-service
     class core
     user root
     ioprio rt 4
 
-service per_proxy /system/bin/pm-proxy
+service per_proxy /system/vendor/bin/pm-proxy
     class core
     user system
     group system
@@ -310,7 +310,7 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /system/vendor/bin/qseecomd
    class core
    user root
    group root
@@ -330,7 +330,7 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-passive-client stream 0666 system system
    group root
 
-service adsprpcd /system/bin/adsprpcd
+service adsprpcd /system/vendor/bin/adsprpcd
    class main
    user media
    group media
@@ -340,13 +340,13 @@ service audiod /system/bin/audiod
    user system
    group system
 
-service imsqmidaemon /system/bin/imsqmidaemon
+service imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
 
-service imsdatadaemon /system/bin/imsdatadaemon
+service imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
@@ -359,14 +359,14 @@ service pd_mapper /system/vendor/bin/pd-mapper
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
-service ims_rtp_daemon /system/bin/ims_rtp_daemon
+service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
    user system
    socket ims_rtpd stream 0660 system radio
    group radio diag inet log
    disabled
 
-service imscmservice /system/bin/imscmservice
+service imscmservice /system/vendor/bin/imscmservice
    class main
    user system
    group radio diag inet log
@@ -401,7 +401,7 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service energy-awareness /system/bin/energy-awareness
+service energy-awareness /system/vendor/bin/energy-awareness
     class main
     user system
     group system

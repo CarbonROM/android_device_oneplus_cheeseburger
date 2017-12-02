@@ -36,7 +36,7 @@ TARGET_OTA_ASSERT_DEVICE := cheeseburger
 PRODUCT_SKIP_FINGERPRINT_FROM_FILE := true
 
 # Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
+TARGET_USES_SDCLANG := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
