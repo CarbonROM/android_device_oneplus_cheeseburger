@@ -21,10 +21,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from cheeseburger device
 $(call inherit-product, device/oneplus/cheeseburger/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+# Inherit some common Carbon stuff.
+$(call inherit-product, vendor/carbon/config/common.mk)
+$(call inherit-product, vendor/carbon/config/gsm.mk)
 
-PRODUCT_NAME := aosip_cheeseburger
+PRODUCT_NAME := carbon_cheeseburger
 PRODUCT_DEVICE := cheeseburger
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -40,5 +41,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=OnePlus5 PRODUCT_NAME=OnePlus5
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=OnePlus/OnePlus5/OnePlus5:8.0.0/OPR6.170623.013/12140945:user/release-keys \
     PRIVATE_BUILD_DESC="OnePlus5-user 8.0.0 OPR6.170623.013 57 release-keys"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carbon.maintainer="gtpitch"
 
 TARGET_VENDOR := oneplus
