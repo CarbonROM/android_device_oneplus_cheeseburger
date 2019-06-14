@@ -1,9 +1,9 @@
 [
   {
-    "remote": "carbon",
-    "repository": "CarbonROM/android_device_oppo_common",
-    "target_path": "device/oppo/common",
-    "revision": "cr-7.0"
+    "remote"     : "lineage",
+    "repository" : "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "revision"   : "lineage-16.0"
   },
   {
     "remote": "carbon",
